@@ -72,14 +72,14 @@ export function HeroSection() {
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
+              {/* <Button 
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-8 py-6 h-auto border-2 font-medium hover:bg-accent/50"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
-              </Button>
+              </Button> */}
             </div>
 
             {/* Enhanced Trust Indicators */}

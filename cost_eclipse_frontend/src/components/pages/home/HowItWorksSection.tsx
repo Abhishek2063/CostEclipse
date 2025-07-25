@@ -89,7 +89,7 @@ export function HowItWorksSection() {
           </div>
 
           {/* Interactive Demo CTA */}
-          <div className="text-center mt-16">
+          {/* <div className="text-center mt-16">
             <Card className="p-8 bg-gradient-to-r from-primary/5 to-secondary/5 border-2 border-primary/20">
               <h3 className="text-2xl font-bold mb-4">See It in Action</h3>
               <p className="text-muted-foreground mb-6 max-w-md mx-auto">
@@ -100,7 +100,7 @@ export function HowItWorksSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Card>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { Logo } from './Logo';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+// import { Button } from '@/components/ui/button';
+// import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { 
   Twitter, 
@@ -16,23 +16,23 @@ import {
 export function Footer() {
   const companyLinks = [
     { label: 'About Us', href: '#about' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Press', href: '#press' },
-    { label: 'Blog', href: '#blog' }
+    // { label: 'Careers', href: '#careers' },
+    // { label: 'Press', href: '#press' },
+    // { label: 'Blog', href: '#blog' }
   ];
 
   const productLinks = [
     { label: 'Features', href: '#features' },
-    { label: 'Pricing', href: '#pricing' },
+    // { label: 'Pricing', href: '#pricing' },
     { label: 'API', href: '#api' },
-    { label: 'Integrations', href: '#integrations' }
+    // { label: 'Integrations', href: '#integrations' }
   ];
 
   const supportLinks = [
-    { label: 'Help Center', href: '#help' },
+    // { label: 'Help Center', href: '#help' },
     { label: 'Contact Us', href: '#contact' },
-    { label: 'Community', href: '#community' },
-    { label: 'Status', href: '#status' }
+    // { label: 'Community', href: '#community' },
+    // { label: 'Status', href: '#status' }
   ];
 
   const legalLinks = [
@@ -64,7 +64,7 @@ export function Footer() {
               </p>
 
               {/* Newsletter Signup */}
-              <div>
+              {/* <div>
                 <h4 className="font-semibold mb-3">Stay Updated</h4>
                 <div className="flex gap-2">
                   <Input 
@@ -78,7 +78,7 @@ export function Footer() {
                 <p className="text-xs text-muted-foreground mt-2">
                   Get the latest updates and financial tips. Unsubscribe anytime.
                 </p>
-              </div>
+              </div> */}
 
               {/* Contact Info */}
               <div className="space-y-2">

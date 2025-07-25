@@ -33,7 +33,7 @@ export function FinalCTASection() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 h-auto border-2 font-medium"
+              className="border-white/30 text-slate-800 hover:bg-white/10 hover:text-white text-lg px-8 py-6 h-auto border-2 font-semibold"
             >
               Explore Features
             </Button>
