@@ -1,23 +1,15 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Progress } from '@/components/ui/progress';
 import { 
   User, 
-  Settings, 
   Wallet, 
-  Calendar,
   BarChart3,
-  TrendingUp,
   Users,
-  FileText,
   ChevronRight,
   CheckCircle,
   ArrowRight,
-  PlusCircle,
-  Target,
-  Share2
 } from 'lucide-react';
 
 export function HowItWorksSection() {

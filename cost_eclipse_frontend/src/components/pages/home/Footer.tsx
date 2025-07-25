@@ -33,6 +33,8 @@ export function Footer() {
     { label: 'Contact Us', href: '#contact' },
     // { label: 'Community', href: '#community' },
     // { label: 'Status', href: '#status' }
+    { label: 'FAQ', href: '#faq' }
+
   ];
 
   const legalLinks = [
