@@ -120,12 +120,20 @@ export function SocialProofSection() {
         {/* Trust Badges */}
         <div className="mt-16 text-center">
           <p className="text-sm text-muted-foreground mb-6">Trusted by leading organizations</p>
-          <div className="flex justify-center items-center gap-8 opacity-60">
-            <div className="bg-muted px-6 py-3 rounded-lg font-semibold">Y Combinator</div>
-            <div className="bg-muted px-6 py-3 rounded-lg font-semibold">TechCrunch</div>
-            <div className="bg-muted px-6 py-3 rounded-lg font-semibold">Product Hunt</div>
-            <div className="bg-muted px-6 py-3 rounded-lg font-semibold">Forbes</div>
-          </div>
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 opacity-60">
+            <div className="bg-muted px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold text-sm sm:text-base">
+              Y Combinator
+            </div>
+            <div className="bg-muted px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold text-sm sm:text-base">
+              TechCrunch
+            </div>
+            <div className="bg-muted px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold text-sm sm:text-base">
+              Product Hunt
+            </div>
+            <div className="bg-muted px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold text-sm sm:text-base">
+              Forbes
+            </div>
+            </div>
         </div>
       </div>
     </section>
