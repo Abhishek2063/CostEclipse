@@ -8,6 +8,11 @@ import CookiesPolicy from './pages/CookiesPolicy';
 import Faq from './pages/Faq';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
+import DashboardUser from './pages/DashboardUser';
+import DashboardSuperAdmin from './pages/DashboardSuperAdmin';
+import UserManagment from './pages/UserManagment';
+import ExpenseManagment from './pages/ExpenseManagment';
+import IncomeManagment from './pages/IncomeManagment';
 
 function App() {
   return (
@@ -22,6 +27,14 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/user-dashboard" element={<DashboardUser />} />
+        <Route path="/superadmin-dashboard" element={<DashboardSuperAdmin />} />
+        <Route path="/user-managment" element={<UserManagment />} />
+        <Route path="/expanse-management" element={<ExpenseManagment />} />
+        <Route path="/income-managment" element={<IncomeManagment />} />
+        
+
+
 
 
       </Routes>
