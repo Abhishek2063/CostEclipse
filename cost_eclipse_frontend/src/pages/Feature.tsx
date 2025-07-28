@@ -6,16 +6,11 @@ import { PersonalFinanceSection } from '@/components/pages/features/PersonalFina
 import { TechnicalFeaturesSection } from '@/components/pages/features/TechnicalFeaturesSection'
 import { UserRolesSection } from '@/components/pages/features/UserRolesSection'
 import { WhyChooseSection } from '@/components/pages/features/WhyChooseSection'
-import { FinalCTASection } from '@/components/layouts/public_layouts/FinalCTASection'
-import { Footer } from '@/components/layouts/public_layouts/Footer'
-import { Header } from '@/components/layouts/public_layouts/Header'
 
 const Feature = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <FeaturesPageHeader />
+  <>
+   <FeaturesPageHeader />
         <PersonalFinanceSection />
         <GroupExpenseSection />
         <AnalyticsSection />
@@ -23,10 +18,7 @@ const Feature = () => {
         <UserRolesSection />
         <AdminControlsSection />
         <WhyChooseSection />
-        <FinalCTASection />
-      </main>
-      <Footer />
-    </div>
+  </>
   )
 }
 

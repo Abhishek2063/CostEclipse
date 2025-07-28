@@ -1,20 +1,8 @@
 import { AboutUsSection } from '@/components/pages/about_us/AboutUsSection'
-import { FinalCTASection } from '@/components/layouts/public_layouts/FinalCTASection'
-import { Footer } from '@/components/layouts/public_layouts/Footer'
-import { Header } from '@/components/layouts/public_layouts/Header'
-import React from 'react'
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-background">
-             <Header />
-             <main>
-               <AboutUsSection />
-               
-               <FinalCTASection />
-             </main>
-             <Footer />
-           </div>
+      <AboutUsSection />
   )
 }
 
