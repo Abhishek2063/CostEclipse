@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Logo } from './Logo';
+import { Logo } from '../../pages/home/Logo';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 

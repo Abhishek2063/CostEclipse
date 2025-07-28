@@ -1,4 +1,4 @@
-import { Logo } from './Logo';
+import { Logo } from '../../pages/home/Logo';
 // import { Button } from '@/components/ui/button';
 // import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';

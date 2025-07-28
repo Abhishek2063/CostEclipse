@@ -1,7 +1,7 @@
 import React from 'react'
-import { FinalCTASection } from '@/components/pages/home/FinalCTASection'
-import { Footer } from '@/components/pages/home/Footer'
-import { Header } from '@/components/pages/home/Header'
+import { FinalCTASection } from '@/components/layouts/public_layouts/FinalCTASection'
+import { Footer } from '@/components/layouts/public_layouts/Footer'
+import { Header } from '@/components/layouts/public_layouts/Header'
 import { TermsOfServiceSection } from '@/components/pages/terms_and_conditions/TermsOfServiceSection'
 const TermsAndConditions = () => {
   return (

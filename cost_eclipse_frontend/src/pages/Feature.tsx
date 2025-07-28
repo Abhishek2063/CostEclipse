@@ -6,9 +6,9 @@ import { PersonalFinanceSection } from '@/components/pages/features/PersonalFina
 import { TechnicalFeaturesSection } from '@/components/pages/features/TechnicalFeaturesSection'
 import { UserRolesSection } from '@/components/pages/features/UserRolesSection'
 import { WhyChooseSection } from '@/components/pages/features/WhyChooseSection'
-import { FinalCTASection } from '@/components/pages/home/FinalCTASection'
-import { Footer } from '@/components/pages/home/Footer'
-import { Header } from '@/components/pages/home/Header'
+import { FinalCTASection } from '@/components/layouts/public_layouts/FinalCTASection'
+import { Footer } from '@/components/layouts/public_layouts/Footer'
+import { Header } from '@/components/layouts/public_layouts/Header'
 
 const Feature = () => {
   return (

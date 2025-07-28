@@ -1,7 +1,7 @@
 import React from 'react'
-import { FinalCTASection } from '@/components/pages/home/FinalCTASection'
-import { Footer } from '@/components/pages/home/Footer'
-import { Header } from '@/components/pages/home/Header'
+import { FinalCTASection } from '@/components/layouts/public_layouts/FinalCTASection'
+import { Footer } from '@/components/layouts/public_layouts/Footer'
+import { Header } from '@/components/layouts/public_layouts/Header'
 import { FAQSection } from '@/components/pages/faq/FAQSection'
 const Faq = () => {
   return (
