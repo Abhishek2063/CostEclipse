@@ -17,6 +17,14 @@ import SavingManagementMain from './pages/SavingManagement';
 import BudgetManagment from './pages/BudgetManagment';
 import FeedbackManagment from './pages/FeedbackManagment';
 import QueryManagementMain from './pages/QueryManagement';
+import FriendsManagment from './pages/FriendsManagment';
+import EventManagmentPage from './pages/EventManagmentPage';
+import ProfileManagmentPage from './pages/ProfileManagmentPage';
+import SignUpPage from './pages/SignUpPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
+import EmailVerification from './pages/EmailVerification';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -40,10 +48,15 @@ function App() {
         <Route path="/budget-managment" element={<BudgetManagment />} />
         <Route path="/feedback-managment" element={<FeedbackManagment />} />
         <Route path="/query-management" element={<QueryManagementMain />} />
-
-
-
-
+        <Route path="/friends-managment" element={<FriendsManagment />} />
+        <Route path="/event-managment" element={<EventManagmentPage />} />
+        <Route path="/profile-managment" element={<ProfileManagmentPage />} />
+        <Route path="*" element={<Home />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/email-verification" element={<EmailVerification />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );
