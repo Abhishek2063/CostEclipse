@@ -13,6 +13,10 @@ import DashboardSuperAdmin from './pages/DashboardSuperAdmin';
 import UserManagment from './pages/UserManagment';
 import ExpenseManagment from './pages/ExpenseManagment';
 import IncomeManagment from './pages/IncomeManagment';
+import SavingManagementMain from './pages/SavingManagement';
+import BudgetManagment from './pages/BudgetManagment';
+import FeedbackManagment from './pages/FeedbackManagment';
+import QueryManagementMain from './pages/QueryManagement';
 
 function App() {
   return (
@@ -32,7 +36,10 @@ function App() {
         <Route path="/user-managment" element={<UserManagment />} />
         <Route path="/expanse-management" element={<ExpenseManagment />} />
         <Route path="/income-managment" element={<IncomeManagment />} />
-        
+        <Route path="/saving-managment" element={<SavingManagementMain />} />
+        <Route path="/budget-managment" element={<BudgetManagment />} />
+        <Route path="/feedback-managment" element={<FeedbackManagment />} />
+        <Route path="/query-management" element={<QueryManagementMain />} />
 
 
 
