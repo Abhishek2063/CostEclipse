@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import { UserPlus, Eye, EyeOff, ArrowRight, CheckCircle } from 'lucide-react';
+import { UserPlus, Eye, EyeOff, CheckCircle } from 'lucide-react';
 import { toast } from "sonner";
 import { Logo } from '../home/Logo';
 

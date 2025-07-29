@@ -14,21 +14,14 @@ import {
   Calendar,
   Users,
   Plus,
-  MapPin,
-  DollarSign,
   Receipt,
   UserPlus,
   Edit,
   Trash2,
   Download,
-  Share2,
-  Clock,
-  CheckCircle,
   AlertTriangle,
   TrendingUp,
   PieChart,
-  FileText,
-  Camera,
   Send
 } from 'lucide-react';
 import { PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';

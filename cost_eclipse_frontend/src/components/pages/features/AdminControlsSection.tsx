@@ -8,11 +8,8 @@ import {
   CreditCard, 
   MessageSquare,
   BarChart3,
-  Settings,
   AlertTriangle,
   CheckCircle,
-  TrendingUp,
-  Database,
   Lock,
   Activity
 } from 'lucide-react';
@@ -156,7 +153,7 @@ export function AdminControlsSection() {
 
         {/* Admin Features Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {adminFeatures.map((feature, index) => {
+          {adminFeatures.map((feature) => {
             const Icon = feature.icon;
             return (
               <Card key={feature.id} className="p-6 lg:p-8 hover:shadow-xl transition-all duration-300">

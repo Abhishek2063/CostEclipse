@@ -36,26 +36,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   HelpCircle,
   Search,
   Filter,
   Eye,
-  MessageSquare,
   Clock,
   CheckCircle,
   UserCheck,
   Plus,
-  Upload,
   MoreHorizontal,
   Send,
   Paperclip,
   Calendar,
   User,
   AlertCircle,
-  ArrowRight,
-  Zap
 } from 'lucide-react';
 import { toast } from "sonner";
 

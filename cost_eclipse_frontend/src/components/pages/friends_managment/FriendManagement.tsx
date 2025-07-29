@@ -13,7 +13,6 @@ import { Switch } from '@/components/ui/switch';
 import { 
   Users,
   UserPlus,
-  Mail,
   Search,
   Filter,
   Edit,
@@ -21,12 +20,9 @@ import {
   Shield,
   Settings,
   TrendingUp,
-  Calendar,
   Activity,
   Star,
-  CheckCircle,
   Clock,
-  Plus,
   Send
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
@@ -66,7 +62,6 @@ export function FriendManagement() {
   const [activeTab, setActiveTab] = useState('friends');
   const [isAddFriendOpen, setIsAddFriendOpen] = useState(false);
   const [isCreateGroupOpen, setIsCreateGroupOpen] = useState(false);
-  const [selectedFriend, setSelectedFriend] = useState<Friend | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [groupFilter, setGroupFilter] = useState('all');
@@ -654,7 +649,7 @@ export function FriendManagement() {
                         </TableCell>
                         <TableCell>
                           <div className="flex items-center gap-1">
-                            <Button variant="ghost" size="sm" onClick={() => setSelectedFriend(friend)}>
+                            <Button variant="ghost" size="sm" onClick={() => {}}>
                               <Edit className="h-3 w-3" />
                             </Button>
                             <Button 

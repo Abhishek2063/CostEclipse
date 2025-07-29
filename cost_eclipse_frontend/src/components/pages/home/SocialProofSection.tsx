@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Star, Users, DollarSign, Target, TrendingUp } from 'lucide-react';
 
 export function SocialProofSection() {

@@ -50,8 +50,6 @@ import {
   BarChart3,
   SortAsc,
   SortDesc,
-  MoreHorizontal,
-  FileText,
   RefreshCw,
   Eye
 } from 'lucide-react';
@@ -66,8 +64,6 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
-  BarChart,
-  Bar
 } from 'recharts';
 import { format } from 'date-fns';
 import { toast } from 'sonner';

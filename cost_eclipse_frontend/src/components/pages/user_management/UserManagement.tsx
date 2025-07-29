@@ -26,7 +26,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 import { 
   DropdownMenu,
@@ -57,10 +56,8 @@ import {
   UserX,
   Trash2,
   RotateCcw,
-  Mail,
   Calendar,
   Clock,
-  Shield,
   User,
   MoreHorizontal,
   ChevronDown,
@@ -94,7 +91,6 @@ export function UserManagement() {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [selectedUser, setSelectedUser] = useState<UserData | null>(null);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   // Mock user data
@@ -197,7 +193,6 @@ export function UserManagement() {
 
   const handleEditUser = (user: UserData) => {
     setSelectedUser(user);
-    setIsEditModalOpen(true);
     toast.info(`Editing user: ${user.name}`);
   };
 
@@ -244,7 +239,7 @@ export function UserManagement() {
     toast.success("User account deleted successfully");
   };
 
-  const handleResetPassword = async (userId: string) => {
+  const handleResetPassword = async () => {
     setIsLoading(true);
     toast.loading("Sending password reset email...");
     
@@ -541,7 +536,7 @@ export function UserManagement() {
                           <Edit className="mr-2 h-4 w-4" />
                           Edit User
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => handleResetPassword(user.id)}>
+                        <DropdownMenuItem onClick={() => handleResetPassword()}>
                           <RotateCcw className="mr-2 h-4 w-4" />
                           Reset Password
                         </DropdownMenuItem>

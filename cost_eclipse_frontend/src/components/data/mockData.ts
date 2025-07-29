@@ -1,4 +1,3 @@
-import { EXPENSE_CATEGORIES, INCOME_SOURCES, INCOME_CATEGORIES, PAYMENT_METHODS } from '../constants/managementConstants';
 
 export interface UserData {
   id: string;

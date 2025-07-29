@@ -3,7 +3,6 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Avatar } from '@/components/ui/avatar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Select,
@@ -25,8 +24,6 @@ import {
   UserCheck,
   TrendingUp,
   TrendingDown,
-  Globe,
-  DollarSign,
   Target,
   PieChart,
   Clock,
@@ -36,23 +33,16 @@ import {
   Eye,
   Download,
   RefreshCw,
-  Filter,
-  Calendar,
   MapPin,
   Activity,
   Zap,
-  Lock,
-  UserX,
   Ban,
   CheckCircle,
-  XCircle,
   MoreHorizontal,
   ArrowUpRight,
   ArrowDownRight
 } from 'lucide-react';
 import { 
-  LineChart, 
-  Line, 
   BarChart, 
   Bar, 
   PieChart as RechartsPieChart, 
@@ -197,19 +187,19 @@ export function SuperAdminDashboard() {
     }, 1500);
   };
 
-  const handleUserAction = (action: string, userId?: string) => {
-    const actions = {
-      'view-profile': 'Opening user profile...',
-      'suspend-user': 'User suspended successfully',
-      'activate-user': 'User activated successfully',
-      'send-notification': 'Notification sent to user',
-      'reset-password': 'Password reset email sent'
-    };
+  // const handleUserAction = (action: string, userId?: string) => {
+  //   const actions = {
+  //     'view-profile': 'Opening user profile...',
+  //     'suspend-user': 'User suspended successfully',
+  //     'activate-user': 'User activated successfully',
+  //     'send-notification': 'Notification sent to user',
+  //     'reset-password': 'Password reset email sent'
+  //   };
     
-    toast.success(actions[action as keyof typeof actions] || `${action} completed`);
-  };
+  //   toast.success(actions[action as keyof typeof actions] || `${action} completed`);
+  // };
 
-  const handleSecurityAction = (action: string, activityId?: number) => {
+  const handleSecurityAction = (action: string) => {
     const actions = {
       'block-ip': 'IP address blocked successfully',
       'investigate': 'Investigation started',
@@ -815,19 +805,19 @@ export function SuperAdminDashboard() {
                         <DropdownMenuContent align="end">
                           <DropdownMenuLabel>Actions</DropdownMenuLabel>
                           <DropdownMenuSeparator />
-                          <DropdownMenuItem onClick={() => handleSecurityAction('investigate', activity.id)}>
+                          <DropdownMenuItem onClick={() => handleSecurityAction('investigate')}>
                             <Eye className="mr-2 h-4 w-4" />
                             Investigate
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => handleSecurityAction('block-ip', activity.id)}>
+                          <DropdownMenuItem onClick={() => handleSecurityAction('block-ip')}>
                             <Ban className="mr-2 h-4 w-4" />
                             Block IP
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => handleSecurityAction('resolve', activity.id)}>
+                          <DropdownMenuItem onClick={() => handleSecurityAction('resolve')}>
                             <CheckCircle className="mr-2 h-4 w-4" />
                             Mark Resolved
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => handleSecurityAction('escalate', activity.id)}>
+                          <DropdownMenuItem onClick={() => handleSecurityAction('escalate')}>
                             <AlertTriangle className="mr-2 h-4 w-4" />
                             Escalate
                           </DropdownMenuItem>

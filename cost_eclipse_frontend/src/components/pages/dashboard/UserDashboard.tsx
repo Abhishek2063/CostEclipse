@@ -2,7 +2,6 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Avatar } from '@/components/ui/avatar';
 import { 
   TrendingUp,
   TrendingDown,
@@ -16,14 +15,11 @@ import {
   Eye,
   MoreHorizontal,
   Plus,
-  Bell,
   Filter
 } from 'lucide-react';
 import { 
   LineChart, 
   Line, 
-  BarChart, 
-  Bar, 
   PieChart, 
   Pie, 
   Cell, 

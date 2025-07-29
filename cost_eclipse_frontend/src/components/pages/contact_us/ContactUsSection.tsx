@@ -9,7 +9,6 @@ import {
   MapPin,
   Clock,
   Send,
-  User,
   Globe,
   Headphones,
   FileText,

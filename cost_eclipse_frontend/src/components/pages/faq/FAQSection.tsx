@@ -5,14 +5,12 @@ import { Button } from '@/components/ui/button';
 import { 
   HelpCircle, 
   Shield, 
-  Settings, 
   Smartphone,
   MessageCircle,
   ChevronDown,
   ChevronUp,
   Search,
   Book,
-  Lock,
   Wrench,
   Globe
 } from 'lucide-react';

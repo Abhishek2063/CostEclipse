@@ -246,15 +246,15 @@ export function AnalyticsSection() {
                           <div className="grid grid-cols-3 gap-3">
                             <div className="bg-background/60 p-3 rounded-lg border">
                               <div className="text-xs text-muted-foreground">Income</div>
-                              <div className="font-bold text-success text-sm">${feature.mockData.income.toLocaleString()}</div>
+                              <div className="font-bold text-success text-sm">${feature.mockData.income && feature.mockData.income.toLocaleString()}</div>
                             </div>
                             <div className="bg-background/60 p-3 rounded-lg border">
                               <div className="text-xs text-muted-foreground">Expenses</div>
-                              <div className="font-bold text-error text-sm">${feature.mockData.expenses.toLocaleString()}</div>
+                              <div className="font-bold text-error text-sm">${feature.mockData.expenses && feature.mockData.expenses.toLocaleString()}</div>
                             </div>
                             <div className="bg-background/60 p-3 rounded-lg border">
                               <div className="text-xs text-muted-foreground">Savings</div>
-                              <div className="font-bold text-primary text-sm">${feature.mockData.savings.toLocaleString()}</div>
+                              <div className="font-bold text-primary text-sm">${feature.mockData.savings && feature.mockData.savings.toLocaleString()}</div>
                             </div>
                           </div>
 
@@ -302,7 +302,7 @@ export function AnalyticsSection() {
 
                           {/* Report Sections */}
                           <div className="space-y-3">
-                            {feature.mockData.reportTypes.slice(0, 3).map((reportType, i) => (
+                            {feature.mockData.reportTypes && feature.mockData.reportTypes.slice(0, 3).map((reportType, i) => (
                               <div key={i} className="bg-background/60 p-3 rounded-lg border flex justify-between items-center">
                                 <span className="text-xs font-medium">{reportType}</span>
                                 <Badge variant="outline" className="text-xs">Ready</Badge>
@@ -314,7 +314,7 @@ export function AnalyticsSection() {
                           <div className="bg-success/10 p-3 rounded-lg border border-success/20">
                             <div className="text-xs font-medium text-success mb-2">💡 Key Insights</div>
                             <div className="space-y-1">
-                              {feature.mockData.insights.slice(0, 2).map((insight, i) => (
+                              {feature.mockData.insights && feature.mockData.insights.slice(0, 2).map((insight, i) => (
                                 <div key={i} className="text-xs text-muted-foreground">• {insight}</div>
                               ))}
                             </div>

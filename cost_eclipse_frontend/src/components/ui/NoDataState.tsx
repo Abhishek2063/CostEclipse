@@ -3,7 +3,6 @@ import { Card } from './card';
 import { 
   FileText, 
   Users, 
-  DollarSign, 
   TrendingUp, 
   TrendingDown, 
   PiggyBank, 

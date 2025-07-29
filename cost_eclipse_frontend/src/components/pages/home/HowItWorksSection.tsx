@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { ArrowRight, UserPlus, Camera, BarChart3 } from 'lucide-react';
 
 export function HowItWorksSection() {

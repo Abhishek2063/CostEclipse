@@ -170,7 +170,7 @@ export function GroupExpenseSection() {
         </div>
 
         <div className="space-y-24">
-          {groupFeatures.map((feature, index) => {
+          {groupFeatures && groupFeatures.length > 0 && groupFeatures.map((feature, index) => {
             const Icon = feature.icon;
             
             return (
@@ -235,27 +235,27 @@ export function GroupExpenseSection() {
                         {/* Event Header */}
                         <div className="flex items-start justify-between pb-4 border-b">
                           <div className="space-y-2">
-                            <h4 className="font-bold text-xl">{feature.mockData.event.name}</h4>
+                            <h4 className="font-bold text-xl">{feature.mockData.event && feature.mockData.event.name}</h4>
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                               <span className="flex items-center gap-1">
                                 <MapPin className="h-4 w-4" />
-                                {feature.mockData.event.location}
+                                {feature.mockData.event && feature.mockData.event.location}
                               </span>
                               <span className="flex items-center gap-1">
                                 <Clock className="h-4 w-4" />
-                                {feature.mockData.event.duration}
+                                {feature.mockData.event && feature.mockData.event.duration}
                               </span>
                             </div>
                           </div>
                           <div className="text-right">
                             <div className="text-2xl font-bold text-primary">
-                              ${feature.mockData.event.totalSpent.toLocaleString()}
+                              ${feature.mockData.event && feature.mockData.event.totalSpent.toLocaleString()}
                             </div>
                             <div className="text-sm text-muted-foreground">
-                              of ${feature.mockData.event.totalBudget.toLocaleString()} budget
+                              of ${feature.mockData.event && feature.mockData.event.totalBudget.toLocaleString()} budget
                             </div>
                             <Progress 
-                              value={(feature.mockData.event.totalSpent / feature.mockData.event.totalBudget) * 100} 
+                              value={feature.mockData.event &&  (feature.mockData.event.totalSpent / feature.mockData.event.totalBudget) * 100} 
                               className="w-24 h-2 mt-2"
                             />
                           </div>
@@ -264,14 +264,14 @@ export function GroupExpenseSection() {
                         {/* Participants */}
                         <div>
                           <div className="flex items-center justify-between mb-4">
-                            <h5 className="font-semibold">Participants ({feature.mockData.event.participants.length})</h5>
+                            <h5 className="font-semibold">Participants ({feature.mockData.event && feature.mockData.event.participants.length})</h5>
                             <Button size="sm" variant="outline">
                               <Plus className="h-4 w-4 mr-1" />
                               Add Person
                             </Button>
                           </div>
                           <div className="space-y-3">
-                            {feature.mockData.event.participants.map((participant, i) => (
+                            {feature.mockData.event && feature.mockData.event.participants.map((participant, i) => (
                               <div key={i} className="flex items-center justify-between p-3 bg-accent/30 rounded-lg">
                                 <div className="flex items-center gap-3">
                                   <Avatar className="h-10 w-10">
@@ -331,7 +331,7 @@ export function GroupExpenseSection() {
 
                         {/* Expense List */}
                         <div className="space-y-4">
-                          {feature.mockData.recentExpenses.map((expense) => (
+                          {feature.mockData.recentExpenses && feature.mockData.recentExpenses.map((expense) => (
                             <div key={expense.id} className="p-4 bg-accent/30 rounded-lg border">
                               <div className="flex justify-between items-start mb-3">
                                 <div>
@@ -366,7 +366,7 @@ export function GroupExpenseSection() {
                         <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
                           <h6 className="font-semibold mb-3 text-primary">Smart Settlement Suggestions</h6>
                           <div className="space-y-2">
-                            {feature.mockData.settlements.map((settlement, i) => (
+                            {feature.mockData.settlements && feature.mockData.settlements.map((settlement, i) => (
                               <div key={i} className="flex items-center justify-between text-sm">
                                 <span>{settlement.from} → {settlement.to}</span>
                                 <span className="font-medium">${settlement.amount}</span>
@@ -393,7 +393,7 @@ export function GroupExpenseSection() {
                         <div>
                           <h6 className="font-semibold mb-4">Spending by Category</h6>
                           <div className="space-y-3">
-                            {feature.mockData.categoryBreakdown.map((category, i) => (
+                            {feature.mockData.categoryBreakdown && feature.mockData.categoryBreakdown.map((category, i) => (
                               <div key={i} className="space-y-2">
                                 <div className="flex justify-between items-center">
                                   <span className="text-sm font-medium">{category.name}</span>
@@ -411,7 +411,7 @@ export function GroupExpenseSection() {
                         <div className="bg-success/5 p-4 rounded-lg border border-success/20">
                           <h6 className="font-semibold mb-3 text-success">💡 Smart Insights</h6>
                           <div className="space-y-2">
-                            {feature.mockData.insights.map((insight, i) => (
+                            {feature.mockData.insights && feature.mockData.insights.map((insight, i) => (
                               <p key={i} className="text-sm text-muted-foreground leading-relaxed">
                                 • {insight}
                               </p>

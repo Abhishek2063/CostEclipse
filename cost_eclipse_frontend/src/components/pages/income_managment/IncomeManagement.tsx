@@ -51,11 +51,8 @@ import {
   DollarSign,
   Wallet,
   Eye,
-  RefreshCw
 } from 'lucide-react';
 import { 
-  LineChart, 
-  Line, 
   PieChart as RechartsPieChart, 
   Pie, 
   Cell, 

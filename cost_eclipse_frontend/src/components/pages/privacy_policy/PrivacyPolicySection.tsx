@@ -11,7 +11,6 @@ import {
   Mail,
   Download,
   FileText,
-  Lock,
   Globe,
   AlertCircle
 } from 'lucide-react';

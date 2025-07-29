@@ -26,7 +26,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 import { 
   DropdownMenu,
@@ -62,7 +61,6 @@ import {
   User,
   Calendar,
   Star,
-  ArrowUpRight,
   TrendingUp,
   Download,
   RefreshCw
@@ -179,7 +177,6 @@ export function FeedbackManagement() {
   const feedbackTypes = ['Bug', 'Suggestion', 'Praise'];
   const statuses = ['Pending', 'In Progress', 'Resolved', 'Dismissed'];
   const priorities = ['High', 'Medium', 'Low'];
-  const categories = ['Mobile App', 'UI/UX', 'Features', 'Integration', 'Export', 'Performance', 'Security'];
 
   // Filter feedbacks
   const filteredFeedbacks = feedbacks.filter(feedback => {

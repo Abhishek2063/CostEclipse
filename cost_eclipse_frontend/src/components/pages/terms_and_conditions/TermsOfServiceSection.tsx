@@ -9,7 +9,6 @@ import {
   Clock,
   Mail,
   Scale,
-  Shield,
   Globe,
   CheckCircle
 } from 'lucide-react';

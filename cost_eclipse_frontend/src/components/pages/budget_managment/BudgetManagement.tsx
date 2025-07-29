@@ -44,7 +44,7 @@ export function BudgetManagement() {
   const [budgetForm, setBudgetForm] = useState({
     category: '',
     monthlyLimit: '',
-    period: 'monthly' as const,
+    period: 'monthly' as any,
     alertThreshold: 80
   });
 

@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Card } from '@/components/ui/card';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { 
   LayoutDashboard,
   TrendingUp,
@@ -20,8 +19,6 @@ import {
   MessageSquare,
   ChevronLeft,
   ChevronRight,
-  Menu,
-  X
 } from 'lucide-react';
 import { Logo } from '@/components/pages/home/Logo';
 

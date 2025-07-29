@@ -22,7 +22,6 @@ export function ResetPasswordScreen({
   onResetPassword, 
   onNavigateToLogin, 
   isLoading = false,
-  resetToken 
 }: ResetPasswordScreenProps) {
   const [formData, setFormData] = useState<ResetPasswordFormData>({
     newPassword: '',

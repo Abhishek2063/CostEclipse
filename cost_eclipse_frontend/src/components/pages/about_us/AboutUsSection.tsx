@@ -1,6 +1,5 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { 
   Heart, 
   Eye, 
@@ -12,11 +11,7 @@ import {
   Palette,
   Brain,
   Target,
-  ArrowRight,
-  Globe,
-  Star,
   Coffee,
-  MessageCircle
 } from 'lucide-react';
 
 export function AboutUsSection() {

@@ -1,5 +1,5 @@
 export const getStatusColor = (status: string, type: 'user' | 'feedback' | 'query' | 'budget' = 'user') => {
-  const colorMaps = {
+  const colorMaps: any = {
     user: {
       'active': 'bg-success text-white',
       'inactive': 'bg-muted text-muted-foreground',

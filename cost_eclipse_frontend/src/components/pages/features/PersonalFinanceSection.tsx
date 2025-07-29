@@ -10,10 +10,6 @@ import {
   Plus,
   ArrowRight,
   Check,
-  Receipt,
-  CreditCard,
-  Wallet,
-  Calculator
 } from 'lucide-react';
 
 export function PersonalFinanceSection() {
@@ -156,7 +152,7 @@ export function PersonalFinanceSection() {
         </div>
 
         <div className="space-y-24">
-          {features.map((feature, index) => {
+          {features && features.length > 0 && features.map((feature, index) => {
             const Icon = feature.icon;
             const isEven = index % 2 === 0;
             
@@ -233,7 +229,7 @@ export function PersonalFinanceSection() {
                               <TrendingUp className="h-4 w-4" />
                               <span className="text-sm font-medium">Income</span>
                             </div>
-                            <div className="text-2xl font-bold">${feature.mockData.income.toLocaleString()}</div>
+                            <div className="text-2xl font-bold">${feature.mockData.income && feature.mockData.income.toLocaleString()}</div>
                             <div className="text-xs text-muted-foreground">+12% vs last month</div>
                           </div>
 
@@ -242,17 +238,17 @@ export function PersonalFinanceSection() {
                               <DollarSign className="h-4 w-4" />
                               <span className="text-sm font-medium">Expenses</span>
                             </div>
-                            <div className="text-2xl font-bold">${feature.mockData.expenses.toLocaleString()}</div>
+                            <div className="text-2xl font-bold">${feature.mockData.expenses && feature.mockData.expenses.toLocaleString()}</div>
                             <div className="text-xs text-muted-foreground">-8% vs last month</div>
                           </div>
                         </div>
 
                         <div className="space-y-3">
                           <h5 className="font-medium text-sm">Top Categories</h5>
-                          {feature.mockData.categories.slice(0, 4).map((category, i) => (
+                          {feature.mockData.categories && feature.mockData.categories.slice(0, 4).map((category: any, i) => (
                             <div key={i} className="flex items-center justify-between p-3 bg-background/60 rounded-lg">
                               <div className="flex items-center gap-3">
-                                <div className={`w-3 h-3 ${category.color} rounded-full`}></div>
+                                <div className={`w-3 h-3 ${category?.color} rounded-full`}></div>
                                 <span className="text-sm font-medium">{category.name_short || category.name}</span>
                               </div>
                               <span className="text-sm font-semibold">${category.amount}</span>
@@ -266,11 +262,11 @@ export function PersonalFinanceSection() {
                       <div className="space-y-6">
                         <div className="flex items-center justify-between mb-4">
                           <h4 className="font-semibold text-lg">Category Breakdown</h4>
-                          <Badge variant="outline">${feature.mockData.totalExpenses.toLocaleString()}</Badge>
+                          <Badge variant="outline">${feature.mockData.totalExpenses && feature.mockData.totalExpenses.toLocaleString()}</Badge>
                         </div>
 
                         <div className="space-y-4">
-                          {feature.mockData.categories.map((category, i) => (
+                          {feature.mockData.categories && feature.mockData.categories.map((category: any, i) => (
                             <div key={i} className="space-y-2">
                               <div className="flex justify-between items-center">
                                 <span className="text-sm font-medium">{category.name}</span>
@@ -302,7 +298,7 @@ export function PersonalFinanceSection() {
                         </div>
 
                         <div className="space-y-4">
-                          {feature.mockData.goals.slice(0, 3).map((goal, i) => (
+                          {feature.mockData.goals && feature.mockData.goals.slice(0, 3).map((goal, i) => (
                             <div key={i} className="p-4 bg-background/60 rounded-lg border">
                               <div className="flex justify-between items-center mb-2">
                                 <span className="font-medium text-sm">{goal.name}</span>
@@ -332,7 +328,7 @@ export function PersonalFinanceSection() {
 
                         <div className="space-y-4">
                           <div className="h-32 bg-background/60 rounded-lg p-4 flex items-end justify-around">
-                            {feature.mockData.monthlyTrend.map((month, i) => (
+                            {feature.mockData.monthlyTrend && feature.mockData.monthlyTrend.map((month, i) => (
                               <div key={i} className="flex flex-col items-center gap-1">
                                 <div className="flex flex-col items-center gap-1">
                                   <div 

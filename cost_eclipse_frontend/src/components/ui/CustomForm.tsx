@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import   { useState, forwardRef } from 'react';
 import { Card } from './card';
 import { Button } from './button';
 import { Input } from './input';
@@ -8,12 +8,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Checkbox } from './checkbox';
 import { RadioGroup, RadioGroupItem } from './radio-group';
 import { Switch } from './switch';
-import { Badge } from './badge';
 import { 
   Eye, 
   EyeOff, 
   AlertCircle, 
-  CheckCircle, 
   Info, 
   Upload, 
   X, 
@@ -22,7 +20,6 @@ import {
   Star,
   Phone,
   Mail,
-  User,
   Lock,
   DollarSign,
   Percent,
@@ -31,13 +28,12 @@ import {
   FileText,
   Link,
   Search,
-  Image as ImageIcon
 } from 'lucide-react';
 import { toast } from "sonner";
 
 export interface FormField {
   id: string;
-  type: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search' | 'textarea' | 'select' | 'checkbox' | 'radio' | 'switch' | 'file' | 'date' | 'time' | 'datetime-local' | 'rating' | 'currency' | 'percentage';
+  type: any;
   label: string;
   placeholder?: string;
   required?: boolean;

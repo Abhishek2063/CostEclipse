@@ -176,7 +176,7 @@ export function UserRolesSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {userTypes.map((userType, index) => {
+          {userTypes.map((userType) => {
             const Icon = userType.icon;
             return (
               <Card key={userType.id} className="p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">

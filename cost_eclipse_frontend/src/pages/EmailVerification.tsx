@@ -1,11 +1,6 @@
 import { EmailVerificationScreen } from '@/components/pages/email_verification/EmailVerificationScreen'
-import React, { useState } from 'react';
-import { toast } from 'sonner';
-type AuthScreen = 'login' | 'signup' | 'forgot-password' | 'reset-password' | 'email-verification';
-const defaultScreen: AuthScreen = 'signup';
+import   { useState } from 'react';
 const EmailVerification = () => {
-      const [currentScreen, setCurrentScreen] = useState<AuthScreen>(defaultScreen);
-  const [userEmail, setUserEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
 
@@ -25,9 +20,9 @@ const EmailVerification = () => {
   return (
     <EmailVerificationScreen
           onResendEmail={handleResendEmail}
-          onNavigateToLogin={() => setCurrentScreen('login')}
+          onNavigateToLogin={() => {}}
           isLoading={isLoading}
-          userEmail={userEmail}
+          userEmail={""}
         />
   )
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { KeyRound, Send, CheckCircle, ArrowLeft } from 'lucide-react';
+import {  Send, CheckCircle, ArrowLeft } from 'lucide-react';
 import { toast } from "sonner";
 import { Logo } from '../home/Logo';
 

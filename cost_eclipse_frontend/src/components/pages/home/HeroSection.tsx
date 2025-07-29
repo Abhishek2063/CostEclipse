@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowRight, Play, TrendingUp, DollarSign, Users, Target, Zap, Shield } from 'lucide-react';
+import { ArrowRight,  TrendingUp, DollarSign, Users, Target, Zap, Shield } from 'lucide-react';
 
 export function HeroSection() {
   return (

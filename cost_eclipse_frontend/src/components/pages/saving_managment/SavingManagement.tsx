@@ -45,7 +45,7 @@ export function SavingManagement() {
     targetAmount: '',
     targetDate: '',
     category: '',
-    priority: 'medium' as const
+    priority: 'medium' as any
   });
 
   const [savingGoals, setSavingGoals] = useState<SavingGoal[]>([
