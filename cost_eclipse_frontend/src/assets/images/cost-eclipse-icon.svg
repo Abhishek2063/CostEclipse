@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="eclipse-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="40%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1" flood-color="rgba(0,0,0,0.1)" />
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="24" cy="24" r="20" fill="rgba(30, 41, 59, 0.1)" stroke="rgba(79, 70, 229, 0.2)" stroke-width="1" />
+
+  <!-- Main Eclipse Shape -->
+  <path d="M 8 24 A 16 16 0 0 1 24 8 A 12 12 0 0 0 24 40 A 16 16 0 0 1 8 24 Z" fill="url(#eclipse-gradient)" filter="url(#shadow)" />
+
+  <!-- Revealed Section -->
+  <path d="M 24 8 A 16 16 0 0 1 40 24 A 16 16 0 0 1 24 40 A 12 12 0 0 0 24 8 Z" fill="rgba(16, 185, 129, 0.15)" stroke="url(#eclipse-gradient)" stroke-width="1.5" />
+
+  <!-- Growth Arrow -->
+  <g>
+    <line x1="18" y1="30" x2="32" y2="16" stroke="url(#arrow-gradient)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)" />
+    <path d="M 28 12 L 32 16 L 28 20" stroke="url(#arrow-gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)" />
+  </g>
+
+  <!-- Dollar Sign -->
+  <text x="24" y="28" text-anchor="middle" fill="#10b981" font-size="12" font-weight="bold" opacity="0.7">$</text>
+
+  <!-- Light Rays -->
+  <g opacity="0.4">
+    <line x1="24" y1="4" x2="24" y2="8" stroke="#10b981" stroke-width="1" stroke-linecap="round" />
+    <line x1="35.3" y1="8.7" x2="33.9" y2="10.1" stroke="#10b981" stroke-width="1" stroke-linecap="round" />
+    <line x1="43.3" y1="24" x2="39.3" y2="24" stroke="#10b981" stroke-width="1" stroke-linecap="round" />
+    <line x1="35.3" y1="39.3" x2="33.9" y2="37.9" stroke="#10b981" stroke-width="1" stroke-linecap="round" />
+  </g>
+</svg>
