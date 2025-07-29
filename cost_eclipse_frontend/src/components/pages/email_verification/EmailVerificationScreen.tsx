@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Mail, RefreshCw, CheckCircle, ArrowLeft } from 'lucide-react';
-import { toast } from "sonner";
+import { toast } from 'sonner';
 import { Logo } from '../home/Logo';
+import { Link } from 'react-router-dom';
+import { HOME } from '@/constants/app_urls';
 
 interface EmailVerificationScreenProps {
   onResendEmail?: () => void;
@@ -12,11 +14,11 @@ interface EmailVerificationScreenProps {
   userEmail?: string;
 }
 
-export function EmailVerificationScreen({ 
-  onResendEmail, 
-  onNavigateToLogin, 
+export function EmailVerificationScreen({
+  onResendEmail,
+  onNavigateToLogin,
   isLoading = false,
-  userEmail = 'your email' 
+  userEmail = 'your email',
 }: EmailVerificationScreenProps) {
   const [emailResent, setEmailResent] = useState(false);
 
@@ -26,10 +28,10 @@ export function EmailVerificationScreen({
         await onResendEmail();
       } else {
         // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         setEmailResent(true);
         toast.success('Verification email sent successfully!');
-        
+
         // Reset the resent state after 3 seconds
         setTimeout(() => {
           setEmailResent(false);
@@ -43,13 +45,14 @@ export function EmailVerificationScreen({
   return (
     <div className="min-h-screen bg-gradient-to-br from-eclipse-dark via-eclipse-transition to-eclipse-bright flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Logo className="mx-auto mb-4" size="lg" />
-        </div>
-
         {/* Email Verification Card */}
         <Card className="p-8 shadow-2xl border-0 bg-card/95 backdrop-blur-sm">
+          <div className="text-center">
+            <Link to={HOME}>
+              <Logo className="mx-auto mb-4 cursor-pointer" size="lg" />
+            </Link>
+          </div>
+
           {/* Header in Card */}
           <div className="text-center mb-6">
             <h1 className="text-3xl font-bold text-foreground mb-3">Please Verify Your Email</h1>
@@ -71,7 +74,7 @@ export function EmailVerificationScreen({
                 We have sent a verification link to{' '}
                 <span className="font-medium text-foreground">{userEmail}</span>
               </p>
-              
+
               <div className="p-4 bg-primary/5 border border-primary/10 rounded-lg">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -92,7 +95,7 @@ export function EmailVerificationScreen({
               <p className="text-sm text-muted-foreground">
                 Did not receive the email? Check your spam folder or resend it.
               </p>
-              
+
               <Button
                 onClick={handleResendEmail}
                 disabled={isLoading || emailResent}
@@ -123,8 +126,8 @@ export function EmailVerificationScreen({
               <p className="text-sm text-muted-foreground mb-2">
                 Need help? Contact our support team
               </p>
-              <a 
-                href="mailto:support@costeclipse.com" 
+              <a
+                href="mailto:support@costeclipse.com"
                 className="text-sm text-primary hover:underline"
               >
                 support@costeclipse.com

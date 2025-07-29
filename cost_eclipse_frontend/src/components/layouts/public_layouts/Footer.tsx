@@ -1,56 +1,51 @@
 import { Logo } from '../../pages/home/Logo';
-// import { Button } from '@/components/ui/button';
-// import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-import { 
-  Twitter, 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  Github,
-  Mail,
-  MapPin,
-  Phone
-} from 'lucide-react';
+import { Twitter, Facebook, Instagram, Linkedin, Github, Mail, MapPin, Phone } from 'lucide-react';
+import {
+  HOME,
+  FEATURES,
+  HOW_IT_WORKS,
+  ABOUT_US,
+  CONTACT_US,
+  COOKIES_POLICY,
+  FAQ,
+  PRIVACY_POLICY,
+  TERMS_AND_CONDITIONS,
+} from '../../../constants/app_urls';
+import { Link } from 'react-router-dom';
+import envConfig from '@/config/env_variables';
 
 export function Footer() {
   const companyLinks = [
-    { label: 'About Us', href: '#about' },
-    // { label: 'Careers', href: '#careers' },
-    // { label: 'Press', href: '#press' },
-    // { label: 'Blog', href: '#blog' }
+    { label: 'Home', to: HOME },
+    { label: 'About Us', to: ABOUT_US },
   ];
 
   const productLinks = [
-    { label: 'Features', href: '#features' },
-    // { label: 'Pricing', href: '#pricing' },
-    { label: 'API', href: '#api' },
-    // { label: 'Integrations', href: '#integrations' }
+    { label: 'Features', to: FEATURES },
+    { label: 'How It Works', to: HOW_IT_WORKS },
   ];
 
   const supportLinks = [
-    // { label: 'Help Center', href: '#help' },
-    { label: 'Contact Us', href: '#contact' },
-    // { label: 'Community', href: '#community' },
-    // { label: 'Status', href: '#status' }
-    { label: 'FAQ', href: '#faq' }
-
+    { label: 'Contact Us', to: CONTACT_US },
+    { label: 'FAQ', to: FAQ },
   ];
 
   const legalLinks = [
-    { label: 'Privacy Policy', href: '#privacy' },
-    { label: 'Terms of Service', href: '#terms' },
-    { label: 'Cookie Policy', href: '#cookies' },
-    { label: 'Security', href: '#security' }
+    { label: 'Privacy Policy', to: PRIVACY_POLICY },
+    { label: 'Terms of Service', to: TERMS_AND_CONDITIONS },
+    { label: 'Cookie Policy', to: COOKIES_POLICY },
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' }
+    { icon: Twitter, href: envConfig.TWITTER_LINK, label: 'Twitter' },
+    { icon: Facebook, href: envConfig.FACEBOOK_LINK, label: 'Facebook' },
+    { icon: Instagram, href: envConfig.INSTAGRAM_LINK, label: 'Instagram' },
+    { icon: Linkedin, href: envConfig.LINKEDIN_LINK, label: 'LinkedIn' },
+    { icon: Github, href: envConfig.GITHUB_LINK, label: 'GitHub' },
   ];
+
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-muted/30 border-t">
@@ -60,9 +55,12 @@ export function Footer() {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Company Info & Newsletter */}
             <div className="lg:col-span-2 space-y-6">
-              <Logo variant="primary" size="lg" />
+              <Link to={HOME}>
+                <Logo variant="primary" size="lg" className="cursor-pointer" />
+              </Link>
               <p className="text-muted-foreground leading-relaxed max-w-md">
-                CostEclipse helps individuals and groups take control of their finances with intelligent tracking, seamless collaboration, and actionable insights.
+                CostEclipse helps individuals and groups take control of their finances with
+                intelligent tracking, seamless collaboration, and actionable insights.
               </p>
 
               {/* Newsletter Signup */}
@@ -86,15 +84,15 @@ export function Footer() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4" />
-                  <span>San Francisco, CA</span>
+                  <span>{envConfig?.LOCATION}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>{envConfig?.CONTACT_NUMBER}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <span>hello@costeclipse.com</span>
+                  <span>{envConfig?.EMAIL}</span>
                 </div>
               </div>
             </div>
@@ -105,12 +103,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {companyLinks.map((link) => (
                   <li key={link.label}>
-                    <a 
-                      href={link.href}
+                    <Link
+                      to={link.to}
                       className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -121,12 +119,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {productLinks.map((link) => (
                   <li key={link.label}>
-                    <a 
-                      href={link.href}
+                    <Link
+                      to={link.to}
                       className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -137,12 +135,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {supportLinks.map((link) => (
                   <li key={link.label}>
-                    <a 
-                      href={link.href}
+                    <Link
+                      to={link.to}
                       className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -157,19 +155,19 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-sm text-muted-foreground">
-              © 2024 CostEclipse. All rights reserved.
+              © {currentYear} CostEclipse. All rights reserved.
             </div>
 
             {/* Legal Links */}
             <div className="flex items-center gap-6">
               {legalLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.to}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
 

@@ -8,7 +8,6 @@ import {
   Target, 
   TrendingUp,
   Plus,
-  ArrowRight,
   Check,
 } from 'lucide-react';
 
@@ -206,10 +205,10 @@ export function PersonalFinanceSection() {
                     ))}
                   </div>
 
-                  <Button className="bg-gradient-to-r from-primary to-success hover:from-primary/90 hover:to-success/90 group">
+                  {/* <Button className="bg-gradient-to-r from-primary to-success hover:from-primary/90 hover:to-success/90 group">
                     Explore This Feature
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </Button> */}
                 </div>
 
                 {/* Mock UI Side */}

@@ -21,8 +21,6 @@ const LoginPage = () => {
   return (
     <LoginScreen
       onLogin={handleLogin}
-      onNavigateToSignUp={() => {}}
-      onNavigateToForgotPassword={() => {}}
       isLoading={isLoading}
     />
   );

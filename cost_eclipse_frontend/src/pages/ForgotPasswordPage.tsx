@@ -17,7 +17,6 @@ const ForgotPasswordPage = () => {
   return (
     <ForgotPasswordScreen
       onSendResetLink={handleForgotPassword}
-      onNavigateToLogin={() => {}}
       isLoading={isLoading}
     />
   );

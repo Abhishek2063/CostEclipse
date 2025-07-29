@@ -8,13 +8,14 @@ import { privateRoutes } from './private_routes';
 import { HOME } from '@/constants/app_urls';
 import SimpleLoader from '@/components/ui/SimpleLoader';
 import PrivateRoute from './PrivateRoute';
+import { ScrollToTop } from '@/components/common/ScrollToTop';
 
 const AllRoutes = () => {
   return (
     <Router>
       <Suspense fallback={<SimpleLoader />}>
+        <ScrollToTop />
         <Routes>
-
           {/* Public marketing layout */}
           <Route element={<PublicLayout />}>
             {publicRoutes.map(({ path, element }) => (
@@ -35,11 +36,7 @@ const AllRoutes = () => {
               <Route
                 key={path}
                 path={path}
-                element={
-                  <PrivateRoute roles={roles}>
-                    {element}
-                  </PrivateRoute>
-                }
+                element={<PrivateRoute roles={roles}>{element}</PrivateRoute>}
               />
             ))}
           </Route>

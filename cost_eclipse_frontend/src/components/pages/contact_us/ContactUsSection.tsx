@@ -15,6 +15,7 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
+import envConfig from '@/config/env_variables';
 
 export function ContactUsSection() {
   const [formData, setFormData] = useState({
@@ -300,10 +301,11 @@ export function ContactUsSection() {
                       <div>
                         <h4 className="font-semibold mb-2">Address</h4>
                         <div className="text-muted-foreground space-y-1">
-                          <p>{officeInfo.address}</p>
+                          {/* <p>{officeInfo.address}</p>
                           <p>{officeInfo.street}</p>
                           <p>{officeInfo.city}</p>
-                          <p>{officeInfo.country}</p>
+                          <p>{officeInfo.country}</p> */}
+                          <p>{envConfig.LOCATION}</p>
                         </div>
                       </div>
 
@@ -313,11 +315,11 @@ export function ContactUsSection() {
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center gap-2">
                               <Phone className="h-4 w-4 text-primary" />
-                              <span>{officeInfo.phone}</span>
+                              <span>{envConfig.CONTACT_NUMBER}</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <Mail className="h-4 w-4 text-primary" />
-                              <span>{officeInfo.email}</span>
+                              <span>{envConfig.EMAIL}</span>
                             </div>
                           </div>
                         </div>

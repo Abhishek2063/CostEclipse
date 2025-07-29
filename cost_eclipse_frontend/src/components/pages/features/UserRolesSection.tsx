@@ -1,6 +1,5 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { 
   Briefcase, 
   User, 
@@ -314,9 +313,9 @@ export function UserRolesSection() {
                   </div>
 
                   {/* CTA */}
-                  <Button className={`w-full bg-gradient-to-r ${userType.color} hover:opacity-90 text-white`}>
+                  {/* <Button className={`w-full bg-gradient-to-r ${userType.color} hover:opacity-90 text-white`}>
                     Explore {userType.title} Features
-                  </Button>
+                  </Button> */}
                 </div>
               </Card>
             );

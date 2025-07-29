@@ -1,14 +1,20 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowRight,  TrendingUp, DollarSign, Users, Target, Zap, Shield } from 'lucide-react';
+import { SIGNUP } from '@/constants/app_urls';
+import { ArrowRight, TrendingUp, DollarSign, Users, Target, Zap, Shield } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function HeroSection() {
+  const navigate = useNavigate();
   return (
-    <section id="home" className="py-20 lg:py-32 bg-gradient-to-br from-background via-accent/30 to-primary/5 relative overflow-hidden">
+    <section
+      id="home"
+      className="py-20 lg:py-32 bg-gradient-to-br from-background via-accent/30 to-primary/5 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25"></div>
-      
+
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -27,11 +33,11 @@ export function HeroSection() {
                 </span>{' '}
                 Into Clarity
               </h1>
-              
+
               <p className="text-xl text-muted-foreground leading-relaxed">
-                CostEclipse illuminates your financial landscape with intelligent expense tracking, 
-                seamless group collaboration, and actionable insights that guide you toward 
-                your financial goals.
+                CostEclipse illuminates your financial landscape with intelligent expense tracking,
+                seamless group collaboration, and actionable insights that guide you toward your
+                financial goals.
               </p>
             </div>
 
@@ -65,13 +71,15 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                onClick={() => navigate(SIGNUP)}
+                size="lg"
                 className="bg-gradient-to-r from-slate-800 via-primary to-success hover:from-slate-700 hover:via-primary/90 hover:to-success/90 text-lg px-8 py-6 h-auto font-semibold shadow-lg"
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+
               {/* <Button 
                 variant="outline" 
                 size="lg" 
@@ -85,15 +93,21 @@ export function HeroSection() {
             {/* Enhanced Trust Indicators */}
             <div className="flex items-center gap-8 pt-8 border-t">
               <div className="text-center">
-                <div className="font-bold text-2xl tabular-nums bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">75,000+</div>
+                <div className="font-bold text-2xl tabular-nums bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
+                  75,000+
+                </div>
                 <div className="text-sm text-muted-foreground">Active Users</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-2xl tabular-nums bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">$12M+</div>
+                <div className="font-bold text-2xl tabular-nums bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
+                  $12M+
+                </div>
                 <div className="text-sm text-muted-foreground">Tracked Monthly</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-2xl tabular-nums bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">4.9★</div>
+                <div className="font-bold text-2xl tabular-nums bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
+                  4.9★
+                </div>
                 <div className="text-sm text-muted-foreground">User Rating</div>
               </div>
             </div>
@@ -148,7 +162,10 @@ export function HeroSection() {
                     <span className="text-sm text-muted-foreground">$8,400 / $10,000</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-2 mb-2">
-                    <div className="bg-gradient-to-r from-secondary to-secondary/80 h-2 rounded-full" style={{ width: '84%' }}></div>
+                    <div
+                      className="bg-gradient-to-r from-secondary to-secondary/80 h-2 rounded-full"
+                      style={{ width: '84%' }}
+                    ></div>
                   </div>
                   <p className="text-xs text-muted-foreground">16% left to reach your goal</p>
                 </div>
@@ -158,17 +175,52 @@ export function HeroSection() {
                   <h4 className="font-medium text-sm text-muted-foreground">Recent Transactions</h4>
                   <div className="space-y-2">
                     {[
-                      { type: 'expense', label: 'Whole Foods Market', amount: '-$127.45', category: 'Groceries', time: '2h ago', color: 'text-error' },
-                      { type: 'income', label: 'Freelance Payment', amount: '+$850.00', category: 'Work', time: '1d ago', color: 'text-success' },
-                      { type: 'expense', label: 'Blue Bottle Coffee', amount: '-$24.60', category: 'Dining', time: '2d ago', color: 'text-error' },
-                      { type: 'expense', label: 'Netflix Subscription', amount: '-$15.99', category: 'Entertainment', time: '3d ago', color: 'text-error' }
+                      {
+                        type: 'expense',
+                        label: 'Whole Foods Market',
+                        amount: '-$127.45',
+                        category: 'Groceries',
+                        time: '2h ago',
+                        color: 'text-error',
+                      },
+                      {
+                        type: 'income',
+                        label: 'Freelance Payment',
+                        amount: '+$850.00',
+                        category: 'Work',
+                        time: '1d ago',
+                        color: 'text-success',
+                      },
+                      {
+                        type: 'expense',
+                        label: 'Blue Bottle Coffee',
+                        amount: '-$24.60',
+                        category: 'Dining',
+                        time: '2d ago',
+                        color: 'text-error',
+                      },
+                      {
+                        type: 'expense',
+                        label: 'Netflix Subscription',
+                        amount: '-$15.99',
+                        category: 'Entertainment',
+                        time: '3d ago',
+                        color: 'text-error',
+                      },
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-accent/50 hover:bg-accent transition-colors">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 rounded-lg bg-accent/50 hover:bg-accent transition-colors"
+                      >
                         <div>
                           <span className="text-sm font-medium">{item.label}</span>
-                          <div className="text-xs text-muted-foreground">{item.category} • {item.time}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {item.category} • {item.time}
+                          </div>
                         </div>
-                        <span className={`text-sm font-semibold tabular-nums ${item.color}`}>{item.amount}</span>
+                        <span className={`text-sm font-semibold tabular-nums ${item.color}`}>
+                          {item.amount}
+                        </span>
                       </div>
                     ))}
                   </div>

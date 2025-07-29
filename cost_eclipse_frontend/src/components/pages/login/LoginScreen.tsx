@@ -4,8 +4,11 @@ import { Card } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { LogIn, Eye, EyeOff, Shield, AlertCircle } from 'lucide-react';
-import { toast } from "sonner";
+import { toast } from 'sonner';
 import { Logo } from '../home/Logo';
+import { useNavigate } from 'react-router-dom';
+import { FORGOT_PASSWORD, HOME, SIGNUP, USER_DASHBOARD } from '@/constants/app_urls';
+import { Link } from 'react-router-dom';
 
 interface LoginFormData {
   email: string;
@@ -15,21 +18,19 @@ interface LoginFormData {
 
 interface LoginScreenProps {
   onLogin?: (data: LoginFormData) => void;
-  onNavigateToSignUp?: () => void;
-  onNavigateToForgotPassword?: () => void;
   isLoading?: boolean;
 }
 
-export function LoginScreen({ 
-  onLogin, 
-  onNavigateToSignUp, 
-  onNavigateToForgotPassword, 
-  isLoading = false 
+export function LoginScreen({
+  onLogin,
+  isLoading = false,
 }: LoginScreenProps) {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: '',
-    rememberMe: false
+    rememberMe: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -49,8 +50,8 @@ export function LoginScreen({
         await onLogin(formData);
       } else {
         // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+
         // Simulate login validation
         if (formData.email === 'demo@costeclipse.com' && formData.password === 'password') {
           toast.success('Welcome back! Redirecting to dashboard...');
@@ -58,6 +59,7 @@ export function LoginScreen({
           if (formData.rememberMe) {
             localStorage.setItem('rememberMe', 'true');
           }
+          navigate(USER_DASHBOARD);
         } else {
           setLoginError('Incorrect email or password. Please try again.');
           toast.error('Login failed. Please check your credentials.');
@@ -72,13 +74,15 @@ export function LoginScreen({
   return (
     <div className="min-h-screen bg-gradient-to-br from-eclipse-dark via-eclipse-transition to-eclipse-bright flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Logo className="mx-auto mb-4" size="lg" />
-        </div>
-
         {/* Login Form */}
         <Card className="p-8 shadow-2xl border-0 bg-card/95 backdrop-blur-sm">
+          {/* Logo */}
+          <div className="text-center">
+            <Link to={HOME}>
+              <Logo className="mx-auto mb-4 cursor-pointer" size="lg" />
+            </Link>
+          </div>
+
           {/* Header in Card */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-foreground mb-3">Welcome Back to CostEclipse</h1>
@@ -143,17 +147,19 @@ export function LoginScreen({
                 <Checkbox
                   id="rememberMe"
                   checked={formData.rememberMe}
-                  onCheckedChange={(checked) => setFormData({ ...formData, rememberMe: checked as boolean })}
+                  onCheckedChange={(checked) =>
+                    setFormData({ ...formData, rememberMe: checked as boolean })
+                  }
                 />
                 <Label htmlFor="rememberMe" className="text-sm cursor-pointer">
                   Remember Me
                 </Label>
               </div>
-              
+
               <button
                 type="button"
-                onClick={onNavigateToForgotPassword}
                 className="text-sm text-primary hover:underline"
+                onClick={() => navigate(FORGOT_PASSWORD)}
               >
                 Forgot your password?
               </button>
@@ -184,7 +190,7 @@ export function LoginScreen({
             <p className="text-sm text-muted-foreground">
               Do not have an account?{' '}
               <button
-                onClick={onNavigateToSignUp}
+                onClick={() => navigate(SIGNUP)}
                 className="text-primary hover:underline font-medium"
               >
                 Sign Up
@@ -194,12 +200,12 @@ export function LoginScreen({
         </Card>
 
         {/* Demo Credentials */}
-        <Card className="mt-4 p-4 bg-background/10 backdrop-blur-sm border border-white/20">
+        <Card className="mt-4 p-4 bg-[#2a2a2a]/50 backdrop-blur-sm border border-white/20 shadow-md rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <Shield className="h-4 w-4 text-white" />
             <span className="text-sm font-medium text-white">Demo Credentials</span>
           </div>
-          <div className="text-sm text-gray-200 space-y-1">
+          <div className="text-sm text-gray-100 space-y-1">
             <p>Email: demo@costeclipse.com</p>
             <p>Password: password</p>
           </div>
@@ -207,7 +213,7 @@ export function LoginScreen({
 
         {/* Security Note */}
         <div className="mt-4 text-center">
-          <div className="bg-background/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
+          <div className="bg-[#2a2a2a]/50 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20 shadow-sm inline-block">
             <p className="text-sm text-white">
               <Shield className="inline h-4 w-4 mr-1" />
               Your connection is secure and encrypted

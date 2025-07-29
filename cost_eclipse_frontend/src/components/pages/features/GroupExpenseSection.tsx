@@ -8,7 +8,6 @@ import {
   Calendar, 
   Calculator,
   Share2,
-  ArrowRight,
   MapPin,
   Clock,
   CheckCircle,
@@ -221,10 +220,10 @@ export function GroupExpenseSection() {
                     ))}
                   </div>
 
-                  <Button size="lg" className="bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 group">
+                  {/* <Button size="lg" className="bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 group">
                     Try Group Features
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </Button> */}
                 </div>
 
                 {/* Large UI Preview Side */}

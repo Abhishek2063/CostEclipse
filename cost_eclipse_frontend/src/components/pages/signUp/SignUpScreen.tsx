@@ -4,15 +4,17 @@ import { Card } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { UserPlus, Eye, EyeOff, CheckCircle } from 'lucide-react';
-import { toast } from "sonner";
+import { toast } from 'sonner';
 import { Logo } from '../home/Logo';
+import { Link } from 'react-router-dom';
+import { HOME, LOGIN, PRIVACY_POLICY, TERMS_AND_CONDITIONS } from '@/constants/app_urls';
 
 const OCCUPATION_OPTIONS = [
   { value: 'salaried', label: 'Salaried Professional' },
   { value: 'business', label: 'Business Owner' },
   { value: 'freelancer', label: 'Freelancer' },
   { value: 'student', label: 'Student' },
-  { value: 'other', label: 'Other' }
+  { value: 'other', label: 'Other' },
 ];
 
 interface SignUpFormData {
@@ -28,14 +30,12 @@ interface SignUpFormData {
 
 interface SignUpScreenProps {
   onSignUp?: (data: SignUpFormData) => void;
-  onNavigateToLogin?: () => void;
   isLoading?: boolean;
 }
 
-export function SignUpScreen({ 
-  onSignUp, 
-  onNavigateToLogin, 
-  isLoading = false 
+export function SignUpScreen({
+  onSignUp,
+  isLoading = false,
 }: SignUpScreenProps) {
   const [formData, setFormData] = useState<SignUpFormData>({
     fullName: '',
@@ -45,7 +45,7 @@ export function SignUpScreen({
     occupation: '',
     monthlyIncome: 0,
     monthlySavingGoal: 0,
-    agreeToTerms: false
+    agreeToTerms: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -61,7 +61,7 @@ export function SignUpScreen({
         await onSignUp(data);
       } else {
         // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         toast.success('Account created successfully! Please verify your email to continue.');
       }
     } catch (error) {
@@ -72,18 +72,23 @@ export function SignUpScreen({
   return (
     <div className="min-h-screen bg-gradient-to-br from-eclipse-dark via-eclipse-transition to-eclipse-bright flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Logo className="mx-auto mb-4" size="lg" />
-        </div>
-
         {/* Sign Up Form */}
         <Card className="p-8 shadow-2xl border-0 bg-card/95 backdrop-blur-sm">
+          {/* Logo */}
+          <div className="text-center">
+            <Link to={HOME}>
+              <Logo className="mx-auto mb-4 cursor-pointer" size="lg" />
+            </Link>
+          </div>
+
           {/* Header in Card */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-foreground mb-3">Create Your CostEclipse Account</h1>
+            <h1 className="text-3xl font-bold text-foreground mb-3">
+              Create Your CostEclipse Account
+            </h1>
             <p className="text-muted-foreground">
-              Take control of your finances today. Sign up to track income, manage expenses, and plan smart budgets.
+              Take control of your finances today. Sign up to track income, manage expenses, and
+              plan smart budgets.
             </p>
           </div>
 
@@ -174,7 +179,7 @@ export function SignUpScreen({
                 required
               >
                 <option value="">Select your occupation</option>
-                {OCCUPATION_OPTIONS.map(option => (
+                {OCCUPATION_OPTIONS.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
@@ -191,7 +196,9 @@ export function SignUpScreen({
                 placeholder="e.g. $3000"
                 className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-input-background"
                 value={formData.monthlyIncome || ''}
-                onChange={(e) => setFormData({ ...formData, monthlyIncome: parseFloat(e.target.value) || 0 })}
+                onChange={(e) =>
+                  setFormData({ ...formData, monthlyIncome: parseFloat(e.target.value) || 0 })
+                }
                 min="0"
               />
             </div>
@@ -205,7 +212,9 @@ export function SignUpScreen({
                 placeholder="e.g. $500"
                 className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-input-background"
                 value={formData.monthlySavingGoal || ''}
-                onChange={(e) => setFormData({ ...formData, monthlySavingGoal: parseFloat(e.target.value) || 0 })}
+                onChange={(e) =>
+                  setFormData({ ...formData, monthlySavingGoal: parseFloat(e.target.value) || 0 })
+                }
                 min="0"
               />
             </div>
@@ -215,17 +224,19 @@ export function SignUpScreen({
               <Checkbox
                 id="agreeToTerms"
                 checked={formData.agreeToTerms}
-                onCheckedChange={(checked) => setFormData({ ...formData, agreeToTerms: checked as boolean })}
+                onCheckedChange={(checked) =>
+                  setFormData({ ...formData, agreeToTerms: checked as boolean })
+                }
               />
               <Label htmlFor="agreeToTerms" className="text-sm cursor-pointer">
                 I agree to the{' '}
-                <a href="#" className="text-primary hover:underline">
+                <Link to={TERMS_AND_CONDITIONS} className="text-primary hover:underline">
                   Terms of Service
-                </a>{' '}
+                </Link>{' '}
                 and{' '}
-                <a href="#" className="text-primary hover:underline">
+                <Link to={PRIVACY_POLICY} className="text-primary hover:underline">
                   Privacy Policy
-                </a>
+                </Link>
                 .
               </Label>
             </div>
@@ -258,21 +269,18 @@ export function SignUpScreen({
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Already have an account?{' '}
-              <button
-                onClick={onNavigateToLogin}
-                className="text-primary hover:underline font-medium"
-              >
+              <Link to={LOGIN} className="text-primary hover:underline font-medium">
                 Log in here
-              </button>
+              </Link>
             </p>
           </div>
         </Card>
 
         {/* Security Note */}
         <div className="mt-6 text-center">
-          <div className="bg-background/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
-            <p className="text-sm text-white">
-              <CheckCircle className="inline h-4 w-4 mr-1" />
+          <div className="bg-gray-100 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-300 shadow-md">
+            <p className="text-sm text-gray-700">
+              <CheckCircle className="inline h-4 w-4 mr-1 text-green-600" />
               Your data is encrypted and secure
             </p>
           </div>

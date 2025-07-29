@@ -11,7 +11,6 @@ import {
   Filter,
   Download,
   Eye,
-  ArrowRight
 } from 'lucide-react';
 
 export function AnalyticsSection() {
@@ -216,10 +215,10 @@ export function AnalyticsSection() {
                   </div>
                 </div>
 
-                <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 group">
+                {/* <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 group">
                   Explore Analytics
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </Button> */}
               </div>
 
               {/* Interactive Dashboard Preview with Callouts */}

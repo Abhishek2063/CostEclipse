@@ -3,8 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { RotateCcw, Eye, EyeOff, CheckCircle, Shield } from 'lucide-react';
-import { toast } from "sonner";
+import { toast } from 'sonner';
 import { Logo } from '../home/Logo';
+import { Link } from 'react-router-dom';
+import { HOME } from '@/constants/app_urls';
 
 interface ResetPasswordFormData {
   newPassword: string;
@@ -18,19 +20,19 @@ interface ResetPasswordScreenProps {
   resetToken?: string;
 }
 
-export function ResetPasswordScreen({ 
-  onResetPassword, 
-  onNavigateToLogin, 
+export function ResetPasswordScreen({
+  onResetPassword,
+  onNavigateToLogin,
   isLoading = false,
 }: ResetPasswordScreenProps) {
   const [formData, setFormData] = useState<ResetPasswordFormData>({
     newPassword: '',
-    confirmPassword: ''
+    confirmPassword: '',
   });
 
   const [showPasswords, setShowPasswords] = useState({
     newPassword: false,
-    confirmPassword: false
+    confirmPassword: false,
   });
 
   const [passwordReset, setPasswordReset] = useState(false);
@@ -38,7 +40,7 @@ export function ResetPasswordScreen({
 
   const validatePassword = (password: string): string[] => {
     const errors: string[] = [];
-    
+
     if (password.length < 8) {
       errors.push('At least 8 characters');
     }
@@ -48,7 +50,7 @@ export function ResetPasswordScreen({
     if (!/(?=.*[!@#$%^&*])/.test(password)) {
       errors.push('At least 1 special character');
     }
-    
+
     return errors;
   };
 
@@ -77,7 +79,7 @@ export function ResetPasswordScreen({
         await onResetPassword(formData);
       } else {
         // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise((resolve) => setTimeout(resolve, 1500));
         setPasswordReset(true);
         toast.success('Password reset successfully!');
       }
@@ -87,9 +89,9 @@ export function ResetPasswordScreen({
   };
 
   const togglePasswordVisibility = (field: keyof typeof showPasswords) => {
-    setShowPasswords(prev => ({
+    setShowPasswords((prev) => ({
       ...prev,
-      [field]: !prev[field]
+      [field]: !prev[field],
     }));
   };
 
@@ -97,12 +99,15 @@ export function ResetPasswordScreen({
     <div className="min-h-screen bg-gradient-to-br from-eclipse-dark via-eclipse-transition to-eclipse-bright flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <Logo className="mx-auto mb-4" size="lg" />
-        </div>
 
         {/* Reset Password Form */}
         <Card className="p-8 shadow-2xl border-0 bg-card/95 backdrop-blur-sm">
+          <div className="text-center">
+            <Link to={HOME}>
+              <Logo className="mx-auto mb-4 cursor-pointer" size="lg" />
+            </Link>
+          </div>
+
           {/* Header in Card */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-foreground mb-3">Reset Your Password</h1>
@@ -136,21 +141,31 @@ export function ResetPasswordScreen({
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
                     onClick={() => togglePasswordVisibility('newPassword')}
                   >
-                    {showPasswords.newPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                    {showPasswords.newPassword ? (
+                      <EyeOff className="h-5 w-5" />
+                    ) : (
+                      <Eye className="h-5 w-5" />
+                    )}
                   </button>
                 </div>
-                
+
                 {/* Password Requirements */}
                 <div className="mt-2 space-y-1">
                   <p className="text-sm text-muted-foreground">Password must contain:</p>
                   <div className="space-y-1">
-                    {['At least 8 characters', 'At least 1 number', 'At least 1 special character'].map((requirement) => {
+                    {[
+                      'At least 8 characters',
+                      'At least 1 number',
+                      'At least 1 special character',
+                    ].map((requirement) => {
                       const isValid = !validationErrors.includes(requirement);
                       return (
                         <div key={requirement} className="flex items-center gap-2 text-sm">
-                          <div className={`w-4 h-4 rounded-full flex items-center justify-center ${
-                            isValid ? 'bg-success text-white' : 'bg-muted'
-                          }`}>
+                          <div
+                            className={`w-4 h-4 rounded-full flex items-center justify-center ${
+                              isValid ? 'bg-success text-white' : 'bg-muted'
+                            }`}
+                          >
                             {isValid && <CheckCircle className="h-3 w-3" />}
                           </div>
                           <span className={isValid ? 'text-success' : 'text-muted-foreground'}>
@@ -183,20 +198,38 @@ export function ResetPasswordScreen({
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
                     onClick={() => togglePasswordVisibility('confirmPassword')}
                   >
-                    {showPasswords.confirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                    {showPasswords.confirmPassword ? (
+                      <EyeOff className="h-5 w-5" />
+                    ) : (
+                      <Eye className="h-5 w-5" />
+                    )}
                   </button>
                 </div>
-                
+
                 {/* Password Match Indicator */}
                 {formData.confirmPassword && (
                   <div className="flex items-center gap-2 text-sm">
-                    <div className={`w-4 h-4 rounded-full flex items-center justify-center ${
-                      formData.newPassword === formData.confirmPassword ? 'bg-success text-white' : 'bg-destructive text-white'
-                    }`}>
-                      {formData.newPassword === formData.confirmPassword && <CheckCircle className="h-3 w-3" />}
+                    <div
+                      className={`w-4 h-4 rounded-full flex items-center justify-center ${
+                        formData.newPassword === formData.confirmPassword
+                          ? 'bg-success text-white'
+                          : 'bg-destructive text-white'
+                      }`}
+                    >
+                      {formData.newPassword === formData.confirmPassword && (
+                        <CheckCircle className="h-3 w-3" />
+                      )}
                     </div>
-                    <span className={formData.newPassword === formData.confirmPassword ? 'text-success' : 'text-destructive'}>
-                      {formData.newPassword === formData.confirmPassword ? 'Passwords match' : 'Passwords do not match'}
+                    <span
+                      className={
+                        formData.newPassword === formData.confirmPassword
+                          ? 'text-success'
+                          : 'text-destructive'
+                      }
+                    >
+                      {formData.newPassword === formData.confirmPassword
+                        ? 'Passwords match'
+                        : 'Passwords do not match'}
                     </span>
                   </div>
                 )}
@@ -229,7 +262,8 @@ export function ResetPasswordScreen({
               </div>
               <h2 className="text-xl font-semibold text-success">Password Reset Successful!</h2>
               <p className="text-muted-foreground">
-                Your password has been successfully updated. You can now log in with your new password.
+                Your password has been successfully updated. You can now log in with your new
+                password.
               </p>
               <div className="pt-4">
                 <Button
