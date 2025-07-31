@@ -32,11 +32,15 @@ const AllRoutes = () => {
 
           {/* Private/protected layout */}
           <Route element={<PrivateLayout />}>
-            {privateRoutes.map(({ path, element, roles }) => (
+            {privateRoutes.map(({ path, element, 
+            // roles
+           }) => (
               <Route
                 key={path}
                 path={path}
-                element={<PrivateRoute roles={roles}>{element}</PrivateRoute>}
+                element={<PrivateRoute 
+                  // roles={roles}
+                  >{element}</PrivateRoute>}
               />
             ))}
           </Route>

@@ -1,21 +1,25 @@
 import { DashboardFooter } from '@/components/layouts/private_layouts/DashboardFooter';
 import { DashboardHeader } from '@/components/layouts/private_layouts/DashboardHeader';
 import { Sidebar } from '@/components/layouts/private_layouts/Sidebar';
-import { LOGIN, SUPERADMIN_DASHBOARD } from '@/constants/app_urls';
-import { localGet } from '@/utils/storage';
+// import { LOGIN, SUPERADMIN_DASHBOARD } from '@/constants/app_urls';
+// import { localGet } from '@/utils/storage';
 import { useEffect, useState } from 'react';
-import { Outlet, Navigate } from 'react-router-dom';
+import {
+  Outlet,
+  //  Navigate
+} from 'react-router-dom';
 
-interface PrivateRouteProps {
-  roles?: string[];
-}
+// interface PrivateRouteProps {
+//   roles?: string[];
+// }
 
-export default function PrivateLayout({ roles }: PrivateRouteProps) {
-  const user = localGet('user');
-  const token = localGet('token');
-  if (!token) return <Navigate to={LOGIN} />;
-  if (!user) return <Navigate to={LOGIN} />;
-  if (roles && !roles.includes(user.role)) return <Navigate to={SUPERADMIN_DASHBOARD} />;
+export default function PrivateLayout() {
+// { roles }: PrivateRouteProps
+  // const user = localGet('user');
+  // const token = localGet('token');
+  // if (!token) return <Navigate to={LOGIN} />;
+  // if (!user) return <Navigate to={LOGIN} />;
+  // if (roles && !roles.includes(user.role)) return <Navigate to={SUPERADMIN_DASHBOARD} />;
 
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -52,7 +56,7 @@ export default function PrivateLayout({ roles }: PrivateRouteProps) {
       {/* Desktop Sidebar */}
       {!isMobile && (
         <Sidebar
-          userRole={user.role}
+          userRole={"user"}
           collapsed={sidebarCollapsed}
           onToggleCollapse={toggleSidebar}
           isMobile={false}
@@ -62,7 +66,7 @@ export default function PrivateLayout({ roles }: PrivateRouteProps) {
       {/* Mobile Sidebar */}
       {isMobile && (
         <Sidebar
-          userRole={user.role}
+          userRole={"user"}
           isMobile={true}
           isOpen={mobileSidebarOpen}
           onClose={closeMobileSidebar}
