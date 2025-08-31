@@ -8,7 +8,6 @@
 **/pnpm-debug.log*
 
 # dotenv environment files
-**/.env
 **/.env.*.local
 **/.env.local
 **/.env.development.local
@@ -22,7 +21,6 @@
 **/*.pid.lock
 
 # IDE/Editor directories
-.vscode/
 .idea/
 *.suo
 *.ntvs*
@@ -64,3 +62,7 @@ yarn.lock
 
 # Optional: ignore test snapshots
 **/__snapshots__/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
