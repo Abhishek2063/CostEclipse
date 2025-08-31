@@ -1,14 +1,9 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import routes from './routes';
-dotenv.config();
+import express, { Application } from "express";
+import welcomeRoute from "./routes/welcome.route";
 
-const app = express();
+const app: Application = express();
 
-// Middlewares
-app.use(cors());
 app.use(express.json());
-app.use('/api', routes);
+app.use("/", welcomeRoute);
 
 export default app;

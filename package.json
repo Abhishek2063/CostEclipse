@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "eslint": "^9.34.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "cost_eclipse_backend/**/*.{ts,js,json,md}": [
+      "cd cost_eclipse_backend && eslint --fix",
+      "cd cost_eclipse_backend && prettier --write"
+    ],
+    "cost_eclipse_frontend/**/*.{ts,js,jsx,tsx,json,md}": [
+      "cd cost_eclipse_frontend && eslint --fix",
+      "cd cost_eclipse_frontend && prettier --write"
+    ]
+  }
+}
